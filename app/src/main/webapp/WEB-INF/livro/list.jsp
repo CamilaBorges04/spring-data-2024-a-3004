@@ -5,24 +5,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gêneros</title>
+    <title>Livros</title>
 </head>
 <body>
-    <h1>Gêneros</h1>
-    <a href="/livro/insert">Novo Gênero</a>
+    <h1>Livros</h1>
+    <a href="/livros/insert">Novo Livro</a>
     <table>
         <tr>
             <th>id</th>
-            <th>Nome</th>
+            <th>Titulo</th>
+            <th>Genero</th>
             <th>&nbsp;</th>
         </tr>
-        <c:forEach var="item" items="${generos}">
+        <c:forEach var="item" items="${livros}">
             <tr>
                 <td>${item.id}</td>
-                <td>${item.nome}</td>
+                <td>${item.titulo}</td>
+                <td>${item.genero.nome}</td>
                 <td>
-                    <a href="/generos/update?id=${item.id}">Editar</a>
-                    <a href="/generos/delete?id=${item.id}">Excluir</a>
+                    <a href="/livros/update?id=${item.id}">Editar</a>
+                    <a href="/livros/delete?id=${item.id}">Excluir</a>
                 </td>
             </tr>
         </c:forEach>
